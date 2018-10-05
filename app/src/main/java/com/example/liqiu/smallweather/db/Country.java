@@ -1,11 +1,20 @@
 package com.example.liqiu.smallweather.db;
 
-import org.litepal.crud.DataSupport;
+import org.litepal.crud.LitePalSupport;
 
-public class Country extends DataSupport {
+public class Country extends LitePalSupport {
     private int id;
     private String countryName;
-    private int weatherId;
+    private String weatherId;
+    private int cityId;
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
 
     public int getId() {
         return id;
@@ -23,11 +32,11 @@ public class Country extends DataSupport {
         this.countryName = countryName;
     }
 
-    public int getWeatherId() {
+    public String getWeatherId() {
         return weatherId;
     }
 
-    public void setWeatherId(int weatherId) {
+    public void setWeatherId(String weatherId) {
         this.weatherId = weatherId;
     }
 }
