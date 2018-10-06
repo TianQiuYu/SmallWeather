@@ -1,6 +1,7 @@
 package com.example.liqiu.smallweather;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -225,5 +226,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sportInfo);
         weatherLayout.setVisibility(View.VISIBLE);
+        //开启服务
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
